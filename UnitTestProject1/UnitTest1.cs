@@ -65,12 +65,23 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod6()
         {
-            string stroka = "10/1b";
-            string expected = "Error!";
+            string stroka = "/";
+
 
             FixWrongResult g = new FixWrongResult();
-            string actual = g.FixWrongResultt(stroka);
-            Assert.AreEqual(expected, actual);
+            Action actual = () => g.FixWrongResultt(stroka);
+            Assert.ThrowsException<Exception>(actual);
+        }
+        [TestMethod]
+        public void TestMethod7()
+        {
+            string stroka = "1f/-10";
+            
+
+
+            FixWrongResult g = new FixWrongResult();
+            Action actual = () => g.FixWrongResultt(stroka);
+            Assert.ThrowsException<Exception>(actual);
         }
     }
 }

@@ -12,10 +12,14 @@ namespace drobi
         {
             string[] subs = stroka.Split('/');
             string str = "";
-            //if (subs{[0], subs[1] != )
-            //{
-
-            //}
+            if (!int.TryParse(subs[0], out int num))
+            {
+                throw new Exception("Error!");
+            }
+            if (!int.TryParse(subs[0], out  num))
+            {
+                throw new Exception("Error!");
+            }
             if (stroka == "")
             {
                     throw new Exception("Error!");
